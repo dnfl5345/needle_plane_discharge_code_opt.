@@ -131,13 +131,8 @@ def make_sim(args):
 
 # ----------------------------------------------------------------------------
 def head_position(s, thr=1e18):
-    """축상 ne > thr 인 가장 낮은 z [mm] (스트리머 선단; 없으면 nan)"""
-    ic = s.nx // 2
-    ne = s.n_e[s.j_ax_lo:s.j_ax_hi + 1, ic]
-    idx = np.nonzero(ne > thr)[0]
-    if idx.size == 0:
-        return float("nan")
-    return float((s.y[s.j_ax_lo + idx.min()] - s.y_bot) * 1e3)
+    """축 근방 ne > thr 인 가장 낮은 z [mm] (스트리머 선단; 없으면 nan) - 코어의 head_z 사용"""
+    return s.head_z(thr) * 1e3
 
 
 def fmt_hms(sec):

@@ -677,11 +677,17 @@ class NeedlePlaneDischarge:
         else:
             self.Va_now = self.V_src_now
 
-    def head_z(self, thr=None):
-        """축상 ne > thr 인 가장 낮은 z [m] (스트리머 선단 위치; 없으면 nan)"""
-        thr = self.n_bridge_thr if thr is None else thr
+    def _axis_ne(self):
+        """축 근방(|x| <= 2h, 5개 열) 최대 ne 의 축상 프로파일 (기체구간).
+        정확히 축 위 한 열만 보면 2D 데카르트 격자의 축 열 밀도 함몰 때문에 판정이 흔들림."""
         ic = self.nx // 2
-        ne = self.n_e[self.j_ax_lo:self.j_ax_hi + 1, ic]
+        cols = slice(max(ic - 2, 0), min(ic + 3, self.nx))
+        return self.n_e[self.j_ax_lo:self.j_ax_hi + 1, cols].max(axis=1)
+
+    def head_z(self, thr=None):
+        """축 근방 ne > thr 인 가장 낮은 z [m] (스트리머 선단 위치; 없으면 nan)"""
+        thr = self.n_bridge_thr if thr is None else thr
+        ne = self._axis_ne()
         idx = np.nonzero(ne > thr)[0]
         if idx.size == 0:
             return float("nan")
@@ -689,12 +695,11 @@ class NeedlePlaneDischarge:
 
     def _check_bridge(self):
         """갭 브리징(스트리머 선단이 대향전극 도달) 판정:
-        축상 최하단 기체셀의 ne > 문턱 이고, 축상 기체구간의 80 % 이상이 ne > 문턱 (연속 채널).
+        축 근방 최하단 기체셀의 ne > 문턱 이고, 기체구간의 80 % 이상이 ne > 문턱 (연속 채널).
         (전 구간 min 조건은 침 선단 흡수셀 등 한두 셀 때문에 판정이 ~1 ns 늦어질 수 있음)"""
         if self.bridged:
             return
-        ic = self.nx // 2
-        ne = self.n_e[self.j_ax_lo:self.j_ax_hi + 1, ic]
+        ne = self._axis_ne()
         if ne.size and ne[0] > self.n_bridge_thr and (ne > self.n_bridge_thr).mean() >= 0.8:
             self.bridged = True
             self.t_bridge = self.t
