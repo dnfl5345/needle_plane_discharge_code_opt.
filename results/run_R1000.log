@@ -134,3 +134,12 @@
   t=  144.096 ns ( 48.0%)  wall 2h 08m 19s  ETA 2h 18m 50s  steps= 166710  dt=  0.859 ps [semi:ionization]  V= 12.02 kV  ne_max=1.00e+22  E_max=9196.2 kV/cm  head z= 0.00 mm
   t=  145.143 ns ( 48.4%)  wall 2h 09m 19s  ETA 2h 17m 58s  steps= 167928  dt=  0.859 ps [semi:ionization]  V= 11.93 kV  ne_max=1.00e+22  E_max=8288.4 kV/cm  head z= 0.00 mm
   t=  146.195 ns ( 48.7%)  wall 2h 10m 19s  ETA 2h 17m 06s  steps= 169152  dt=  0.859 ps [semi:ionization]  V= 11.84 kV  ne_max=1.00e+22  E_max=8295.2 kV/cm  head z= 0.00 mm
+  t=  147.262 ns ( 49.1%)  wall 2h 11m 19s  ETA 2h 16m 12s  steps= 170394  dt=  0.859 ps [semi:ionization]  V= 11.75 kV  ne_max=1.00e+22  E_max=8066.1 kV/cm  head z= 0.00 mm
+  t=  148.324 ns ( 49.4%)  wall 2h 12m 19s  ETA 2h 15m 19s  steps= 171630  dt=  0.859 ps [semi:ionization]  V= 11.66 kV  ne_max=1.00e+22  E_max=9486.2 kV/cm  head z= 0.00 mm
+  t=  149.392 ns ( 49.8%)  wall 2h 13m 19s  ETA 2h 14m 24s  steps= 172872  dt=  0.859 ps [semi:ionization]  V= 11.57 kV  ne_max=1.00e+22  E_max=10469.9 kV/cm  head z= 0.00 mm
+  t=  150.443 ns ( 50.1%)  wall 2h 14m 19s  ETA 2h 13m 32s  steps= 174096  dt=  0.859 ps [semi:ionization]  V= 11.48 kV  ne_max=1.00e+22  E_max=8929.7 kV/cm  head z= 0.00 mm
+  t=  151.500 ns ( 50.5%)  wall 2h 15m 20s  ETA 2h 12m 39s  steps= 175326  dt=  0.859 ps [semi:ionization]  V= 11.40 kV  ne_max=1.00e+22  E_max=9822.4 kV/cm  head z= 0.00 mm
+  t=  152.573 ns ( 50.9%)  wall 2h 16m 20s  ETA 2h 11m 44s  steps= 176574  dt=  0.859 ps [semi:ionization]  V= 11.31 kV  ne_max=1.00e+22  E_max=9406.0 kV/cm  head z= 0.00 mm
+  t=  153.656 ns ( 51.2%)  wall 2h 17m 20s  ETA 2h 10m 48s  steps= 177834  dt=  0.859 ps [semi:ionization]  V= 11.22 kV  ne_max=1.00e+22  E_max=7809.7 kV/cm  head z= 0.00 mm
+  t=  154.739 ns ( 51.6%)  wall 2h 18m 20s  ETA 2h 09m 52s  steps= 179094  dt=  0.859 ps [semi:ionization]  V= 11.14 kV  ne_max=1.00e+22  E_max=7769.1 kV/cm  head z= 0.00 mm
+  t=  155.806 ns ( 51.9%)  wall 2h 19m 20s  ETA 2h 08m 57s  steps= 180336  dt=  0.859 ps [semi:ionization]  V= 11.05 kV  ne_max=1.00e+22  E_max=7636.3 kV/cm  head z= 0.00 mm
