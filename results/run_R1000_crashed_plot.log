@@ -278,3 +278,34 @@
   t=  292.265 ns ( 97.4%)  wall 4h 32m 38s  ETA 0h 07m 13s  steps= 343704  dt=  0.859 ps [semi:ionization]  V=  4.17 kV  ne_max=1.00e+22  E_max=9358.8 kV/cm  head z= 0.00 mm
   t=  293.317 ns ( 97.8%)  wall 4h 33m 38s  ETA 0h 06m 14s  steps= 344928  dt=  0.859 ps [semi:ionization]  V=  4.14 kV  ne_max=1.00e+22  E_max=8435.2 kV/cm  head z= 0.00 mm
   t=  294.379 ns ( 98.1%)  wall 4h 34m 38s  ETA 0h 05m 15s  steps= 346164  dt=  0.859 ps [semi:ionization]  V=  4.11 kV  ne_max=1.00e+22  E_max=8494.3 kV/cm  head z= 0.00 mm
+  t=  295.426 ns ( 98.5%)  wall 4h 35m 39s  ETA 0h 04m 16s  steps= 347382  dt=  0.859 ps [semi:ionization]  V=  4.08 kV  ne_max=1.00e+22  E_max=9380.0 kV/cm  head z= 0.00 mm
+  t=  296.468 ns ( 98.8%)  wall 4h 36m 39s  ETA 0h 03m 18s  steps= 348594  dt=  0.859 ps [semi:ionization]  V=  4.05 kV  ne_max=1.00e+22  E_max=7605.8 kV/cm  head z= 0.00 mm
+  t=  297.515 ns ( 99.2%)  wall 4h 37m 39s  ETA 0h 02m 19s  steps= 349812  dt=  0.859 ps [semi:ionization]  V=  4.02 kV  ne_max=1.00e+22  E_max=9368.7 kV/cm  head z= 0.00 mm
+  t=  298.572 ns ( 99.5%)  wall 4h 38m 39s  ETA 0h 01m 20s  steps= 351042  dt=  0.859 ps [semi:ionization]  V=  3.99 kV  ne_max=1.00e+22  E_max=9951.9 kV/cm  head z= 0.00 mm
+  t=  299.608 ns ( 99.9%)  wall 4h 39m 39s  ETA 0h 00m 22s  steps= 352248  dt=  0.859 ps [semi:ionization]  V=  3.96 kV  ne_max=1.00e+22  E_max=9631.0 kV/cm  head z= 0.00 mm
+  t=  300.000 ns (100.0%)  wall 4h 40m 02s  ETA 0h 00m 00s  steps= 352704  dt=  0.859 ps [semi:ionization]  V=  3.95 kV  ne_max=1.00e+22  E_max=9727.6 kV/cm  head z= 0.00 mm
+  t=  300.000 ns (100.0%)  wall 4h 40m 02s  ETA 0h 00m 00s  steps= 352704  dt=  0.859 ps [semi:ionization]  V=  3.95 kV  ne_max=1.00e+22  E_max=9727.6 kV/cm  head z= 0.00 mm
+   ** gap bridged (streamer reached counter electrode) at t = 8.073 ns **
+Traceback (most recent call last):
+  File "/home/user/needle_plane_discharge_code_opt./run_batch.py", line 568, in <module>
+  File "/home/user/needle_plane_discharge_code_opt./run_batch.py", line 510, in main
+    if args.afterglow_us > 0 and stat["stop_reason"] in ("t_end", "bridged"):
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/needle_plane_discharge_code_opt./run_batch.py", line 370, in fig_initstats
+    else:
+        ^^
+  File "/usr/local/lib/python3.11/dist-packages/matplotlib/_api/deprecation.py", line 477, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/matplotlib/__init__.py", line 1531, in inner
+    return func(
+           ^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/matplotlib/axes/_axes.py", line 7515, in hist
+    m, bins = np.histogram(x[i], bins, weights=w[i], **hist_kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/numpy/lib/_histograms_impl.py", line 792, in histogram
+    bin_edges, uniform_bins = _get_bin_edges(a, bins, range, weights)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/numpy/lib/_histograms_impl.py", line 449, in _get_bin_edges
+    raise ValueError(
+ValueError: Too many bins for data range. Cannot create 40 finite-sized bins.

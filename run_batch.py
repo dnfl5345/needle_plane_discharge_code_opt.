@@ -157,7 +157,7 @@ class Recorder:
         self.t_end = t_end
         self.f = open(os.path.join(out, "progress.csv"), "w")
         self.f.write("t_ns,wall_s,substeps,dt_ps,limiter,Va_kV,ne_max,nip_max,E_max_kVcm,"
-                     "z_head_mm,N_OP,N_O3,N_NO,F_init\n")
+                     "z_head_mm,N_OP,N_O3,N_NO,F_init,I_A\n")
 
     def __call__(self, s):
         w = time.perf_counter() - self.t0
@@ -182,7 +182,7 @@ class Recorder:
         zh = head_position(s)
         row = (s.t * 1e9, w, s.n_substeps, s.dt_last * 1e12, s.dt_limiter, s.Va_now / 1e3,
                float(s.n_e.max()), float(s.n_ip.max()), Emax, zh,
-               tot["O(P)"], tot["O3"], tot["NO"], F)
+               tot["O(P)"], tot["O3"], tot["NO"], F, float(s.I_dis))
         self.rows.append(row)
         if print_line:
             self.f.write(",".join(f"{v:.6g}" if isinstance(v, float) else str(v) for v in row) + "\n")
@@ -362,7 +362,9 @@ def fig_initstats(s, out):
     ax1.set_xlabel("Time [ns]"); ax1.grid(alpha=0.3, which="both")
     samples, cens = s.sample_delays(2000, rng=np.random.default_rng(0))
     if samples.size >= 5:
-        ax2.hist(samples * 1e9, bins=40, color="#4477aa", edgecolor="k", linewidth=0.4)
+        xs = samples * 1e9
+        nb = 40 if np.ptp(xs) > 0 else 1              # 표본이 모두 같으면(위험률 포화) 1 bin
+        ax2.hist(xs, bins=nb, color="#4477aa", edgecolor="k", linewidth=0.4)
         med = np.median(samples) * 1e9
         ax2.axvline(med, color="r", ls="--", lw=1.5)
         ax2.set_title(f"Statistical delay-time distribution (N=2000, median={med:.2f} ns, "
@@ -457,6 +459,33 @@ def fig_montage(s, rec, out, plate_color, n=12):
     fig.savefig(os.path.join(out, "fig7_ne_montage.png"), dpi=120); plt.close(fig)
 
 
+def save_checkpoint(s, rec, out, tag):
+    """긴 실행의 최종 상태를 npz 로 저장 (그림/CSV 는 나중에 재생성 가능)"""
+    try:
+        np.savez_compressed(os.path.join(out, f"state_{tag}.npz"),
+                            t=s.t, n_e=s.n_e, n_ip=s.n_ip, n_in=s.n_in, V=s.V, Emag=s.Emag,
+                            x=s.x, y=s.y, y_bot=s.y_bot, sigma=s.sigma,
+                            rad=np.stack([s.rad[sp] for sp in RAD_SPECIES]),
+                            circ_hist=np.array(s.circ_hist), dt_hist=np.array([(a, b) for a, b, _ in s.dt_hist]),
+                            dt_lim=np.array([c for _, _, c in s.dt_hist]),
+                            init_stats=np.array(s.init_stats),
+                            rows=np.array([r[:4] + r[5:] for r in rec.rows], dtype=float),
+                            rad_hist_t=np.array([p[0] for p in s.rad_hist]),
+                            rad_hist=np.array([[p[1][sp] for sp in RAD_SPECIES] for p in s.rad_hist]))
+    except Exception as e:                       # pragma: no cover
+        print(f"   [warn] checkpoint failed: {e}")
+
+
+def _safe(fn, *a, **k):
+    """그림 한 장의 오류가 실행 결과 전체를 잃게 하지 않도록 격리"""
+    try:
+        fn(*a, **k)
+    except Exception as e:
+        import traceback
+        print(f"   [warn] {fn.__name__} failed: {e}")
+        traceback.print_exc()
+
+
 # ----------------------------------------------------------------------------
 def main(argv=None):
     args = build_parser().parse_args(argv)
@@ -498,13 +527,18 @@ def main(argv=None):
     title = (f"{args.config}, gap {args.gap:g} mm, Vp={args.polarity*args.volt:+g} kV {args.wave}, "
              f"nx={s.nx}, t={_tstr(s.t)}, wall {fmt_hms(W_dis)}")
     tf = time.perf_counter()
-    fig_field_ne(s, out, plate_color, title)
-    fig_axial(s, out, plate_color)
-    fig_radicals(s, out, plate_color, suffix="")
-    fig_paper(s, out, suffix="")
-    fig_initstats(s, out)
-    fig_timing(s, rec, out, title)
-    fig_montage(s, rec, out, plate_color)
+    save_checkpoint(s, rec, out, "discharge_end")
+    json.dump(dict(t_reached_ns=s.t*1e9, wall_discharge_s=W_dis, substeps=s.n_substeps,
+                   ms_per_substep=1e3*W_dis/max(s.n_substeps, 1), t_bridge_ns=(s.t_bridge*1e9 if s.t_bridge else None),
+                   stop_reason=stat["stop_reason"]),
+              open(os.path.join(out, "timing_discharge.json"), "w"), indent=2)
+    _safe(fig_field_ne, s, out, plate_color, title)
+    _safe(fig_axial, s, out, plate_color)
+    _safe(fig_radicals, s, out, plate_color, suffix="")
+    _safe(fig_paper, s, out, suffix="")
+    _safe(fig_initstats, s, out)
+    _safe(fig_timing, s, rec, out, title)
+    _safe(fig_montage, s, rec, out, plate_color)
     print(f"-- discharge-phase figures written in {time.perf_counter()-tf:.1f} s")
     W_ag = 0.0
     if args.afterglow_us > 0 and stat["stop_reason"] in ("t_end", "bridged"):
@@ -516,8 +550,9 @@ def main(argv=None):
             s.step_afterglow(n_sub=4); nag += 4
         W_ag = time.perf_counter() - ta
         print(f"   afterglow done: {nag} substeps, {fmt_hms(W_ag)}, t={s.t*1e6:.3f} us")
-        fig_radicals(s, out, plate_color, suffix="_afterglow")
-        fig_paper(s, out, suffix="_afterglow")
+        save_checkpoint(s, rec, out, "afterglow_end")
+        _safe(fig_radicals, s, out, plate_color, suffix="_afterglow")
+        _safe(fig_paper, s, out, suffix="_afterglow")
     rec.close()
 
     # ---- 결과 통계 ----
@@ -545,7 +580,7 @@ def main(argv=None):
     # ---- CSV ----
     if not args.no_csv:
         tf = time.perf_counter()
-        export_csv_files(s, os.path.join(out, "csv"), stamp)
+        _safe(export_csv_files, s, os.path.join(out, "csv"), stamp)
         print(f"-- CSV written in {time.perf_counter()-tf:.1f} s")
     print("\n==== SUMMARY ====")
     print(f" simulated {s.t*1e9:.3f} ns  |  substeps {s.n_substeps}  |  {timing['ms_per_substep']:.2f} ms/substep  "

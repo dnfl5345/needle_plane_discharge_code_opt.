@@ -1,0 +1,6 @@
+== HV discharge simulator v18 batch ==  out: results/run_R1000_20ns
+   scipy: yes  poisson=direct dt_rule=v18
+   grid 161x125 (h=0.125 mm), unknowns=18048, init 0.07 s (LU factor 45 ms), poisson=direct
+-- discharge phase: 0 -> 20 ns  (V(t): IMPULSE, 0.01/0.1 us, Vp=+30 kV, config=NEEDLE_PLANE)
+  t=    0.000 ns (  0.0%)  wall 0h 00m 00s  ETA --  steps=      0  dt=  0.000 ps [-]  V=  0.00 kV  ne_max=0.00e+00  E_max=   0.0 kV/cm  head z=  nan mm
+  t=    1.364 ns (  6.8%)  wall 0h 00m 00s  ETA 0h 00m 01s  steps=      6  dt=113.884 ps [ionization]  V= 11.06 kV  ne_max=4.37e+11  E_max=  45.8 kV/cm  head z=  nan mm
