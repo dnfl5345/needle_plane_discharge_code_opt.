@@ -1,3 +1,11 @@
 [gui] created; grid 161x125, poisson=direct
 [gui] 8 tabs, axes per fig: [2, 2, 2, 4, 3, 1, 6, 2]
 [gui] step_once OK: t=1.364 ns
+[gui] run 65.5 s: t=7.623 ns, substeps=6276, frames=1046, speed=0.1165 ns/s, last redraw 1.70 s, bridged=False (t_bridge=None), afterglow=False, msg='Poisson: sparse direct (scipy)'
+[gui] afterglow step OK: t=2029.930 ns dt=294.027 ns
+[gui] export_csv OK: 20 files in /tmp/tmprysyvni6
+[gui] (warning dialog suppressed) Tip radius (0.150 mm) < grid spacing (0.317 mm): tip approxi
+[gui] config switch OK: NEEDLE_ROGOWSKI, R=500.0, grid 121x53, t=2.310 ns, I=1.935e-08 A
+[gui] (warning dialog suppressed) Tip radius (0.150 mm) < grid spacing (0.250 mm): tip approxi
+[gui] sphere-sphere OK: t=1.500 ns
+[gui] ALL OK
