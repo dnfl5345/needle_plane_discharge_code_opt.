@@ -38,7 +38,7 @@
   8) 적응형 반암시적 포아송 (semi_implicit=True, 기본)
      - 브리징 후 도전 채널(ne ~ 1e21-1e22)에서는 유전완화 한계 dt < 0.5 ε0/σ 가
        0.03-0.1 ps 로 붕괴 -> 명시적 스킴으로는 300 ns 에 수 시간~수십 시간.
-     - 유전완화 한계가 다른 한계(CFL/전리/파형)보다 'LU 재분해 비용비' 이상 작을 때만
+     - 유전완화 한계가 다른 한계(CFL/전리/파형)보다 semi_ratio(기본 8) 배 이상 작을 때만
        ∇·[(ε_r ε0 + dt σ)∇V] = -ρ 를 매 스텝 재조립·재분해(≈40 ms @161x125)하여 풀고
        dt 는 CFL/전리 한계로 결정 (Ventzek 1994 / Hagelaar-Kroesen 2000 형식).
        그 외 구간은 고정 LU 명시적 스킴(≈1 ms) 유지. dt_hist 제한요인 "semi:..." 표기.
@@ -221,7 +221,7 @@ class NeedlePlaneDischarge:
                  rog_halfw_mm=6.0, rog_edge_mm=2.0,
                  poisson="direct", dt_rule="v18", lut_pts=8000,
                  R_series_ohm=0.0, n_cap=1e22, dt_floor_ps=0.01,
-                 semi_implicit=True):
+                 semi_implicit=True, semi_ratio=8.0):
 
         # ---------- 전기/기체 ----------
         self.gap      = gap_mm * 1e-3
@@ -308,6 +308,7 @@ class NeedlePlaneDischarge:
         self._n_stall = 0
         self.n_bridge_thr = 1e18                  # 브리징 판정 축상 ne 문턱 [m^-3]
         self.semi_implicit = bool(semi_implicit)  # 유전완화 한계가 지배할 때 반암시적 포아송 사용
+        self.semi_ratio = max(float(semi_ratio), 1.0)   # 반암시적 전환 문턱: dt_diel*ratio < dt_other (결정론적)
         self.n_semi_steps = 0                     # 반암시적으로 푼 서브스텝 수
         self.t_wall_semi = 0.0                    # 반암시적 조립+분해 누적 [s]
         self._dt_prev_semi = None
@@ -1001,10 +1002,9 @@ class NeedlePlaneDischarge:
             dt_diel = 0.5 * tau_d
             use_semi = False
             if self.semi_implicit and self._lu is not None:
-                # 반암시적 분해 비용(≈ LU 분해시간 / 명시적 스텝시간) 이상으로 dt 이득이 있을 때만 사용
-                t_expl = (self.t_wall_step - self.t_wall_semi) / max(self.n_substeps - self.n_semi_steps, 1)
-                ratio = 1.0 + self.t_wall_factor / max(t_expl, 1e-4) if self.n_substeps > 10 else 8.0
-                use_semi = dt_diel * max(ratio, 2.0) < dt_other
+                # 유전완화 한계가 다른 한계보다 semi_ratio(기본 8 ≈ LU 재분해/명시적 스텝 비용비) 배
+                # 이상 작을 때만 반암시적 사용. 고정 문턱 -> 결과가 벽시계/PC 부하와 무관(재현 가능)
+                use_semi = dt_diel * self.semi_ratio < dt_other
             if use_semi:
                 dt = dt_other
                 if self._dt_prev_semi is not None:
