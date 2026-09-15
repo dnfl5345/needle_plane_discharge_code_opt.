@@ -119,8 +119,13 @@ R=1 kΩ, 11 ns 까지: 브리징 8.09 vs 8.06 ns, 이후 전류 24.7 vs 27.6 A(�
 
 ![R1000 timing](results/run_R1000_crashed_plot/fig6_timing_from_log.png)
 
-물리적으로 의미 있는 전압붕괴 구간(0–20 ns)만 다시 실행한 결과(전극전압·전류 파형, 잔광 10 µs 포함)는
-`results/run_R1000_20ns/` 에 있습니다.
+물리적으로 의미 있는 전압붕괴 구간(0–20 ns)만 다시 실행한 결과(`results/run_R1000_20ns/`, 잔광 10 µs 포함):
+
+| 항목 | 값 |
+|---|---|
+| 갭 브리징 / 총 소요 | 8.07 ns / **11 min 02 s** (20,736 서브스텝, 31.5 ms/서브스텝; 브리징 후 62 %가 반암시적) |
+| 전극전압 | 브리징 직후 29 kV → 0–15 kV 로 붕괴(진동), 전류 20–40 A(최대 74 A) ≈ V_src/R |
+| 잔광 10 µs 후 | 그림 `fig3_radicals_afterglow.png`, `fig4_paper_afterglow.png` |
 
 ![R1000 20ns](results/run_R1000_20ns/fig6_timing.png)
 

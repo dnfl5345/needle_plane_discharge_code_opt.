@@ -1,0 +1,8 @@
+{
+  "t_reached_ns": 20.000653327809882,
+  "wall_discharge_s": 652.7854659300028,
+  "substeps": 20736,
+  "ms_per_substep": 31.480780571470046,
+  "t_bridge_ns": 8.072679808556861,
+  "stop_reason": "t_end"
+}
