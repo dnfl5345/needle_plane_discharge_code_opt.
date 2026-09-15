@@ -4,3 +4,6 @@
 -- discharge phase: 0 -> 300 ns  (V(t): IMPULSE, 0.01/0.1 us, Vp=+30 kV, config=NEEDLE_PLANE)
   t=    0.000 ns (  0.0%)  wall 0h 00m 00s  ETA --  steps=      0  dt=  0.000 ps [-]  V=  0.00 kV  ne_max=0.00e+00  E_max=   0.0 kV/cm  head z=  nan mm
   t=    1.364 ns (  0.5%)  wall 0h 00m 00s  ETA 0h 00m 11s  steps=      6  dt=113.884 ps [ionization]  V= 11.06 kV  ne_max=4.37e+11  E_max=  45.8 kV/cm  head z=  nan mm
+  t=    5.258 ns (  1.8%)  wall 0h 00m 15s  ETA 0h 14m 04s  steps=   2070  dt=  0.594 ps [dielectric]  V= 25.56 kV  ne_max=6.36e+20  E_max= 132.7 kV/cm  head z= 7.25 mm
+  t=    6.807 ns (  2.3%)  wall 0h 00m 30s  ETA 0h 21m 36s  steps=   4440  dt=  0.597 ps [dielectric]  V= 27.76 kV  ne_max=9.57e+20  E_max= 159.0 kV/cm  head z= 5.00 mm
+  t=    7.720 ns (  2.6%)  wall 0h 00m 45s  ETA 0h 28m 27s  steps=   6864  dt=  0.307 ps [dielectric]  V= 28.59 kV  ne_max=1.67e+21  E_max= 174.3 kV/cm  head z= 2.62 mm
