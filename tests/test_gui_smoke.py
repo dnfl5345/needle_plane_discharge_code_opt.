@@ -49,6 +49,8 @@ app.toggle_afterglow(); assert not s.afterglow
 d = tempfile.mkdtemp()
 H.filedialog.askdirectory = lambda **k: d
 H.messagebox.showinfo = lambda *a, **k: None
+H.messagebox.showwarning = lambda *a, **k: print("[gui] (warning dialog suppressed)", a[1][:60] if len(a) > 1 else "")
+H.messagebox.showerror = lambda *a, **k: (_ for _ in ()).throw(RuntimeError(f"GUI error dialog: {a}"))
 app.export_csv()
 n_csv = len([f for f in os.listdir(d) if f.endswith(".csv")])
 assert n_csv >= 18, n_csv

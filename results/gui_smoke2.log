@@ -1,0 +1,3 @@
+[gui] created; grid 161x125, poisson=direct
+[gui] 8 tabs, axes per fig: [2, 2, 2, 4, 3, 1, 6, 2]
+[gui] step_once OK: t=1.364 ns
