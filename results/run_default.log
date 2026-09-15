@@ -7,3 +7,17 @@
   t=    5.258 ns (  1.8%)  wall 0h 00m 15s  ETA 0h 14m 04s  steps=   2070  dt=  0.594 ps [dielectric]  V= 25.56 kV  ne_max=6.36e+20  E_max= 132.7 kV/cm  head z= 7.25 mm
   t=    6.807 ns (  2.3%)  wall 0h 00m 30s  ETA 0h 21m 36s  steps=   4440  dt=  0.597 ps [dielectric]  V= 27.76 kV  ne_max=9.57e+20  E_max= 159.0 kV/cm  head z= 5.00 mm
   t=    7.720 ns (  2.6%)  wall 0h 00m 45s  ETA 0h 28m 27s  steps=   6864  dt=  0.307 ps [dielectric]  V= 28.59 kV  ne_max=1.67e+21  E_max= 174.3 kV/cm  head z= 2.62 mm
+  t=    8.066 ns (  2.7%)  wall 0h 00m 51s  ETA 0h 30m 46s  steps=   7806  dt=  0.398 ps [dielectric]  V= 28.83 kV  ne_max=1.44e+21  E_max= 168.1 kV/cm  head z= 0.00 mm
+   ** gap bridged (streamer reached counter electrode) at t = 8.066 ns **
+   discharge phase stopped 0 ns after bridging (fluid-model validity ends: streamer-to-spark transition; use --R_series > 0 or --on_bridge continue to go on)
+-- discharge-phase figures written in 4.3 s
+-- afterglow phase: 10 us (field frozen, radical diffusion + chemistry)
+   afterglow done: 48 substeps, 0h 00m 00s, t=10.644 us
+-- CSV written in 0.3 s
+
+==== SUMMARY ====
+ simulated 10644.170 ns  |  substeps 7806  |  6.53 ms/substep  |  field solve 30% of step time
+ wall: init 0.08 s, discharge 0h 00m 51s, afterglow 0h 00m 00s, TOTAL 0h 00m 56s
+ dt [ps]: mean 0.923 min 0.261 max 113.884 ; limiter share dielectric 98%, ionization 1%, semi:ionization 1%
+ final: max ne 0.000e+00 m^-3, max |E| 168.1 kV/cm, head z nan mm, F_init 1.0
+ radicals (total number): O(P) 1.02e+13, O(D) 0.00e+00, N(S) 2.99e+12, N(D) 8.36e-132, OH 0.00e+00, NO 2.90e+12, O3 1.16e+13, H 0.00e+00
