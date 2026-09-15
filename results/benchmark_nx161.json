@@ -1,0 +1,70 @@
+{
+  "v17": {
+    "wall_s": 12.368850795999833,
+    "substeps": 168,
+    "ms_per_substep": 73.62411188095139,
+    "ne_max": 1.3306235918994525e+20,
+    "E_max_kVcm": 96.21084221391503,
+    "O_total": 45003140.21176035,
+    "speedup_vs_v17": 1.0,
+    "max_dlog10_ne_axis": 0.0,
+    "max_rel_dE_axis": 0.0
+  },
+  "v18_dt17": {
+    "wall_s": 0.5919055710000976,
+    "substeps": 102,
+    "ms_per_substep": 5.802995794118604,
+    "ne_max": 3.0321567115010974e+19,
+    "E_max_kVcm": 75.54057727507839,
+    "O_total": 804808.56184684,
+    "speedup_vs_v17": 20.896662241413157,
+    "max_dlog10_ne_axis": 3.244930301918913,
+    "max_rel_dE_axis": 0.435661872784895
+  },
+  "v18": {
+    "wall_s": 0.6214877800000522,
+    "substeps": 102,
+    "ms_per_substep": 6.093017450980904,
+    "ne_max": 3.0321567115010974e+19,
+    "E_max_kVcm": 75.54057727507839,
+    "O_total": 804808.56184684,
+    "speedup_vs_v17": 19.90200160653005,
+    "max_dlog10_ne_axis": 3.244930301918913,
+    "max_rel_dE_axis": 0.435661872784895
+  },
+  "init_s": {
+    "v17": 5.236437026999965,
+    "v18": 0.05748218099984115
+  },
+  "params": {
+    "gap_mm": 10.0,
+    "voltage_kV": 30.0,
+    "polarity": 1,
+    "pressure_atm": 1.0,
+    "r_main_mm": 1.0,
+    "r_tip_mm": 0.15,
+    "taper_mm": 3.0,
+    "nx": 161,
+    "n_background": 0.0,
+    "seed_density": 0.0,
+    "wave_mode": "IMPULSE",
+    "t_front_us": 0.01,
+    "t_tail_us": 0.1,
+    "n2_pct": 78,
+    "o2_pct": 21,
+    "ar_pct": 1,
+    "h2o_pct": 0,
+    "gamma_see": 0.05,
+    "dt_user_ns": 0.0,
+    "snap_ns": 1.0,
+    "plate_mode": "GND_METAL",
+    "plate_thick_mm": 1.0,
+    "plate_epsr": 3.8,
+    "rate_model": "TABLE",
+    "cath_J0": 0.01,
+    "n_ion_bg": 1000000000.0,
+    "q_bg": 10000000.0,
+    "config": "NEEDLE_PLANE",
+    "t_sim_ns": 3.0000000000000004
+  }
+}

@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+results/**/csv/
+results/*.npz
+results/*.npy
+results/smoke_*/
+results/run_R1000_300ns/
+results/state_*.npz
+results/run_default_nx321_postbridge1ns/
+results/run_default_nx321_postbridge1ns.log

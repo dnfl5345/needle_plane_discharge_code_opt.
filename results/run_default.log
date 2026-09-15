@@ -1,0 +1,23 @@
+== HV discharge simulator v18 batch ==  out: results/run_default
+   scipy: yes  poisson=direct dt_rule=v18
+   grid 161x125 (h=0.125 mm), unknowns=18048, init 0.33 s (LU factor 209 ms), poisson=direct
+-- discharge phase: 0 -> 300 ns  (V(t): IMPULSE, 0.01/0.1 us, Vp=+30 kV, config=NEEDLE_PLANE)
+  t=    0.000 ns (  0.0%)  wall 0h 00m 00s  ETA --  steps=      0  dt=  0.000 ps [-]  V=  0.00 kV  ne_max=0.00e+00  E_max=   0.0 kV/cm  head z=  nan mm
+  t=    1.364 ns (  0.5%)  wall 0h 00m 00s  ETA 0h 00m 24s  steps=      6  dt=113.884 ps [ionization]  V= 11.06 kV  ne_max=4.37e+11  E_max=  45.8 kV/cm  head z=  nan mm
+  t=    5.341 ns (  1.8%)  wall 0h 00m 15s  ETA 0h 13m 55s  steps=   2418  dt=  0.667 ps [dielectric]  V= 25.71 kV  ne_max=6.41e+20  E_max= 134.5 kV/cm  head z= 7.12 mm
+  t=    6.876 ns (  2.3%)  wall 0h 00m 30s  ETA 0h 21m 25s  steps=   4800  dt=  0.554 ps [dielectric]  V= 27.84 kV  ne_max=1.09e+21  E_max= 156.0 kV/cm  head z= 4.88 mm
+  t=    7.737 ns (  2.6%)  wall 0h 00m 45s  ETA 0h 28m 25s  steps=   7182  dt=  0.329 ps [dielectric]  V= 28.60 kV  ne_max=1.66e+21  E_max= 156.8 kV/cm  head z= 2.62 mm
+  t=    8.059 ns (  2.7%)  wall 0h 00m 51s  ETA 0h 30m 35s  steps=   8058  dt=  0.393 ps [dielectric]  V= 28.83 kV  ne_max=1.46e+21  E_max= 169.7 kV/cm  head z= 0.00 mm
+   ** gap bridged (streamer reached counter electrode) at t = 8.059 ns **
+   discharge phase stopped 0 ns after bridging (fluid-model validity ends: streamer-to-spark transition; use --R_series > 0 or --on_bridge continue to go on)
+-- discharge-phase figures written in 4.4 s
+-- afterglow phase: 10 us (field frozen, radical diffusion + chemistry)
+   afterglow done: 48 substeps, 0h 00m 00s, t=10.413 us
+-- CSV written in 0.4 s
+
+==== SUMMARY ====
+ simulated 10412.551 ns  |  substeps 8058  |  6.29 ms/substep  |  field solve 27% of step time
+ wall: init 0.33 s, discharge 0h 00m 51s, afterglow 0h 00m 00s, TOTAL 0h 00m 56s
+ dt [ps]: mean 0.894 min 0.253 max 113.884 ; limiter share dielectric 99%, ionization 1%
+ final: max ne 0.000e+00 m^-3, max |E| 169.7 kV/cm, head z nan mm, F_init 1.0
+ radicals (total number): O(P) 1.06e+13, O(D) 0.00e+00, N(S) 3.06e+12, N(D) 1.17e-128, OH 0.00e+00, NO 2.97e+12, O3 1.17e+13, H 0.00e+00
