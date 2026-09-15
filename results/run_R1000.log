@@ -24,3 +24,4 @@
   t=   28.360 ns (  9.5%)  wall 0h 18m 03s  ETA 2h 52m 51s  steps=  30462  dt=  0.859 ps [semi:ionization]  V= 27.46 kV  ne_max=1.00e+22  E_max=8956.0 kV/cm  head z= 0.00 mm
   t=   29.433 ns (  9.8%)  wall 0h 19m 03s  ETA 2h 55m 06s  steps=  31710  dt=  0.859 ps [semi:ionization]  V= 27.25 kV  ne_max=1.00e+22  E_max=8900.8 kV/cm  head z= 0.00 mm
   t=   30.500 ns ( 10.2%)  wall 0h 20m 03s  ETA 2h 57m 11s  steps=  32952  dt=  0.859 ps [semi:ionization]  V= 27.05 kV  ne_max=1.00e+22  E_max=9245.9 kV/cm  head z= 0.00 mm
+  t=   31.563 ns ( 10.5%)  wall 0h 21m 03s  ETA 2h 59m 05s  steps=  34188  dt=  0.859 ps [semi:ionization]  V= 26.84 kV  ne_max=1.00e+22  E_max=9228.1 kV/cm  head z= 0.00 mm
