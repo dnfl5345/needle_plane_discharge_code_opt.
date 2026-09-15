@@ -688,12 +688,14 @@ class NeedlePlaneDischarge:
         return float(self.y[self.j_ax_lo + idx.min()] - self.y_bot)
 
     def _check_bridge(self):
-        """축상 기체구간 전체가 ne > 문턱이면 갭 브리징(스트리머-스파크 전이 시작)으로 판정"""
+        """갭 브리징(스트리머 선단이 대향전극 도달) 판정:
+        축상 최하단 기체셀의 ne > 문턱 이고, 축상 기체구간의 80 % 이상이 ne > 문턱 (연속 채널).
+        (전 구간 min 조건은 침 선단 흡수셀 등 한두 셀 때문에 판정이 ~1 ns 늦어질 수 있음)"""
         if self.bridged:
             return
         ic = self.nx // 2
         ne = self.n_e[self.j_ax_lo:self.j_ax_hi + 1, ic]
-        if ne.size and ne.min() > self.n_bridge_thr:
+        if ne.size and ne[0] > self.n_bridge_thr and (ne > self.n_bridge_thr).mean() >= 0.8:
             self.bridged = True
             self.t_bridge = self.t
 

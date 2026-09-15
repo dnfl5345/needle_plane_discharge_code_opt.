@@ -5,3 +5,12 @@
   t=    0.000 ns (  0.0%)  wall 0h 00m 00s  ETA --  steps=      0  dt=  0.000 ps [-]  V=  0.00 kV  ne_max=0.00e+00  E_max=   0.0 kV/cm  head z=  nan mm
   t=    1.364 ns (  0.5%)  wall 0h 00m 00s  ETA 0h 00m 09s  steps=      6  dt=113.884 ps [ionization]  V= 11.06 kV  ne_max=4.37e+11  E_max=  45.8 kV/cm  head z=  nan mm
   t=    8.477 ns (  2.8%)  wall 0h 01m 00s  ETA 0h 34m 25s  steps=   8166  dt=  2.425 ps [semi:ionization]  V= 18.89 kV  ne_max=9.61e+21  E_max= 114.8 kV/cm  head z= 0.00 mm
+  t=   10.966 ns (  3.7%)  wall 0h 02m 00s  ETA 0h 52m 51s  steps=  10224  dt=  0.859 ps [semi:ionization]  V= 10.71 kV  ne_max=9.79e+21  E_max= 151.5 kV/cm  head z= 0.00 mm
+  t=   12.116 ns (  4.0%)  wall 0h 03m 00s  ETA 1h 11m 26s  steps=  11562  dt=  0.859 ps [semi:ionization]  V=  0.19 kV  ne_max=9.73e+21  E_max= 192.2 kV/cm  head z= 0.00 mm
+  t=   13.224 ns (  4.4%)  wall 0h 04m 01s  ETA 1h 26m 55s  steps=  12852  dt=  0.859 ps [semi:ionization]  V= 11.80 kV  ne_max=9.98e+21  E_max= 291.4 kV/cm  head z= 0.00 mm
+  t=   14.313 ns (  4.8%)  wall 0h 05m 01s  ETA 1h 40m 01s  steps=  14118  dt=  0.859 ps [semi:ionization]  V=  8.49 kV  ne_max=9.98e+21  E_max= 239.5 kV/cm  head z= 0.00 mm
+  t=   15.396 ns (  5.1%)  wall 0h 06m 01s  ETA 1h 51m 08s  steps=  15378  dt=  0.859 ps [semi:ionization]  V= 10.13 kV  ne_max=9.98e+21  E_max= 276.3 kV/cm  head z= 0.00 mm
+  t=   16.489 ns (  5.5%)  wall 0h 07m 01s  ETA 2h 00m 37s  steps=  16650  dt=  0.859 ps [semi:ionization]  V= 12.99 kV  ne_max=9.98e+21  E_max= 298.4 kV/cm  head z= 0.00 mm
+  t=   17.567 ns (  5.9%)  wall 0h 08m 01s  ETA 2h 08m 55s  steps=  17904  dt=  0.859 ps [semi:ionization]  V=  8.89 kV  ne_max=9.98e+21  E_max= 241.3 kV/cm  head z= 0.00 mm
+  t=   18.660 ns (  6.2%)  wall 0h 09m 01s  ETA 2h 16m 01s  steps=  19176  dt=  0.859 ps [semi:ionization]  V=  6.93 kV  ne_max=9.98e+21  E_max= 246.8 kV/cm  head z= 0.00 mm
+  t=   19.738 ns (  6.6%)  wall 0h 10m 02s  ETA 2h 22m 22s  steps=  20430  dt=  0.859 ps [semi:ionization]  V=  8.78 kV  ne_max=9.99e+21  E_max= 279.7 kV/cm  head z= 0.00 mm
