@@ -238,3 +238,13 @@
   t=  252.736 ns ( 84.2%)  wall 3h 52m 32s  ETA 0h 43m 29s  steps= 294918  dt=  0.859 ps [semi:ionization]  V=  5.53 kV  ne_max=1.00e+22  E_max=10182.2 kV/cm  head z= 0.00 mm
   t=  253.793 ns ( 84.6%)  wall 3h 53m 32s  ETA 0h 42m 31s  steps= 296148  dt=  0.859 ps [semi:ionization]  V=  5.49 kV  ne_max=1.00e+22  E_max=9732.6 kV/cm  head z= 0.00 mm
   t=  254.836 ns ( 84.9%)  wall 3h 54m 32s  ETA 0h 41m 34s  steps= 297366  dt=  0.821 ps [semi:CFL]  V=  5.45 kV  ne_max=1.00e+22  E_max=11490.2 kV/cm  head z= 0.00 mm
+  t=  255.820 ns ( 85.3%)  wall 3h 55m 33s  ETA 0h 40m 41s  steps= 298584  dt=  0.784 ps [semi:CFL]  V=  5.41 kV  ne_max=1.00e+22  E_max=12080.6 kV/cm  head z= 0.00 mm
+  t=  256.745 ns ( 85.6%)  wall 3h 56m 33s  ETA 0h 39m 51s  steps= 299820  dt=  0.746 ps [semi:CFL]  V=  5.37 kV  ne_max=1.00e+22  E_max=12797.4 kV/cm  head z= 0.00 mm
+  t=  257.665 ns ( 85.9%)  wall 3h 57m 33s  ETA 0h 39m 02s  steps= 301038  dt=  0.762 ps [semi:CFL]  V=  5.34 kV  ne_max=1.00e+22  E_max=12495.3 kV/cm  head z= 0.00 mm
+  t=  258.589 ns ( 86.2%)  wall 3h 58m 33s  ETA 0h 38m 12s  steps= 302256  dt=  0.754 ps [semi:CFL]  V=  5.30 kV  ne_max=1.00e+22  E_max=12671.3 kV/cm  head z= 0.00 mm
+  t=  259.548 ns ( 86.5%)  wall 3h 59m 33s  ETA 0h 37m 20s  steps= 303492  dt=  0.779 ps [semi:CFL]  V=  5.27 kV  ne_max=1.00e+22  E_max=12185.7 kV/cm  head z= 0.00 mm
+  t=  260.482 ns ( 86.8%)  wall 4h 00m 33s  ETA 0h 36m 30s  steps= 304728  dt=  0.739 ps [semi:CFL]  V=  5.23 kV  ne_max=1.00e+22  E_max=12954.1 kV/cm  head z= 0.00 mm
+  t=  261.382 ns ( 87.1%)  wall 4h 01m 33s  ETA 0h 35m 41s  steps= 305970  dt=  0.752 ps [semi:CFL]  V=  5.20 kV  ne_max=1.00e+22  E_max=12699.0 kV/cm  head z= 0.00 mm
+  t=  262.270 ns ( 87.4%)  wall 4h 02m 33s  ETA 0h 34m 54s  steps= 307200  dt=  0.712 ps [semi:CFL]  V=  5.17 kV  ne_max=1.00e+22  E_max=13542.8 kV/cm  head z= 0.00 mm
+  t=  263.166 ns ( 87.7%)  wall 4h 03m 34s  ETA 0h 34m 05s  steps= 308436  dt=  0.717 ps [semi:CFL]  V=  5.13 kV  ne_max=1.00e+22  E_max=13401.0 kV/cm  head z= 0.00 mm
+  t=  264.042 ns ( 88.0%)  wall 4h 04m 34s  ETA 0h 33m 18s  steps= 309672  dt=  0.727 ps [semi:CFL]  V=  5.10 kV  ne_max=1.00e+22  E_max=13172.4 kV/cm  head z= 0.00 mm
