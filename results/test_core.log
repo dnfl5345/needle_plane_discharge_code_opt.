@@ -1,5 +1,2 @@
 [ok] direct Poisson == converged SOR
 [ok] LUT rates within 0.5% of v17 interpolation
-[ok] single-substep evolution matches v17 (converged field)
-[ok] guards/circuit/semi: bridged at 3.20 ns, semi steps 1151, I=9.19 A, Va=0.98 kV
-ALL TESTS PASSED (61 s)

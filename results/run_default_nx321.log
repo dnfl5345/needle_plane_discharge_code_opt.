@@ -1,10 +1,6 @@
 == HV discharge simulator v18 batch ==  out: results/run_default_nx321
    scipy: yes  poisson=direct dt_rule=v18
-   grid 321x249 (h=0.062 mm), unknowns=72422, init 0.41 s (LU factor 276 ms), poisson=direct
+   grid 321x249 (h=0.062 mm), unknowns=72422, init 0.40 s (LU factor 256 ms), poisson=direct
 -- discharge phase: 0 -> 300 ns  (V(t): IMPULSE, 0.01/0.1 us, Vp=+30 kV, config=NEEDLE_PLANE)
   t=    0.000 ns (  0.0%)  wall 0h 00m 00s  ETA --  steps=      0  dt=  0.000 ps [-]  V=  0.00 kV  ne_max=0.00e+00  E_max=   0.0 kV/cm  head z=  nan mm
-  t=    1.049 ns (  0.3%)  wall 0h 00m 00s  ETA 0h 00m 59s  steps=      6  dt=104.577 ps [ionization]  V=  8.91 kV  ne_max=6.31e+11  E_max=  47.4 kV/cm  head z=  nan mm
-  t=    3.805 ns (  1.3%)  wall 0h 01m 00s  ETA 1h 18m 12s  steps=   1812  dt=  0.716 ps [dielectric]  V= 22.11 kV  ne_max=5.14e+20  E_max= 111.0 kV/cm  head z= 8.94 mm
-  t=    5.416 ns (  1.8%)  wall 0h 02m 00s  ETA 1h 49m 10s  steps=   3690  dt=  0.732 ps [dielectric]  V= 25.84 kV  ne_max=7.54e+20  E_max= 136.2 kV/cm  head z= 8.00 mm
-  t=    6.288 ns (  2.1%)  wall 0h 03m 00s  ETA 2h 20m 28s  steps=   5538  dt=  0.362 ps [dielectric]  V= 27.15 kV  ne_max=1.09e+21  E_max= 159.9 kV/cm  head z= 7.94 mm
-  t=    6.932 ns (  2.3%)  wall 0h 04m 00s  ETA 2h 49m 27s  steps=   7380  dt=  0.348 ps [dielectric]  V= 27.89 kV  ne_max=1.43e+21  E_max= 173.2 kV/cm  head z= 7.94 mm
+  t=    1.049 ns (  0.3%)  wall 0h 00m 00s  ETA 0h 01m 01s  steps=      6  dt=104.577 ps [ionization]  V=  8.91 kV  ne_max=6.31e+11  E_max=  47.4 kV/cm  head z=  nan mm
