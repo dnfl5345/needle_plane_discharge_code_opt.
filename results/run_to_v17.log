@@ -1,0 +1,1 @@
+v17: bridged=True t_bridge=8.072 ns | t=8.572 ns wall=176s steps=28794 dt=0.0285 ps (dielectric) ne_max=9.86e+21 Emax=165.3 kV/cm at (j=8,i=65) z=0.00mm x=-1.88mm | ne,n+,n- there: 4.41e+20 4.52e+20 1.58e+18

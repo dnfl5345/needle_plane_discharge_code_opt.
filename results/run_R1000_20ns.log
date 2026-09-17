@@ -1,0 +1,51 @@
+== HV discharge simulator v18 batch ==  out: results/run_R1000_20ns
+   scipy: yes  poisson=direct dt_rule=v18
+   grid 161x125 (h=0.125 mm), unknowns=18048, init 0.07 s (LU factor 45 ms), poisson=direct
+-- discharge phase: 0 -> 20 ns  (V(t): IMPULSE, 0.01/0.1 us, Vp=+30 kV, config=NEEDLE_PLANE)
+  t=    0.000 ns (  0.0%)  wall 0h 00m 00s  ETA --  steps=      0  dt=  0.000 ps [-]  V=  0.00 kV  ne_max=0.00e+00  E_max=   0.0 kV/cm  head z=  nan mm
+  t=    1.364 ns (  6.8%)  wall 0h 00m 00s  ETA 0h 00m 01s  steps=      6  dt=113.884 ps [ionization]  V= 11.06 kV  ne_max=4.37e+11  E_max=  45.8 kV/cm  head z=  nan mm
+  t=    6.719 ns ( 33.6%)  wall 0h 00m 30s  ETA 0h 00m 59s  steps=   4320  dt=  0.632 ps [dielectric]  V= 27.62 kV  ne_max=9.08e+20  E_max= 139.0 kV/cm  head z= 5.12 mm
+  t=    8.532 ns ( 42.7%)  wall 0h 01m 00s  ETA 0h 01m 21s  steps=   8190  dt=  2.111 ps [semi:ionization]  V= 19.06 kV  ne_max=9.85e+21  E_max= 131.9 kV/cm  head z= 0.00 mm
+  t=   10.316 ns ( 51.6%)  wall 0h 01m 30s  ETA 0h 01m 25s  steps=   9468  dt=  0.859 ps [semi:ionization]  V= 15.20 kV  ne_max=9.87e+21  E_max= 211.4 kV/cm  head z= 0.00 mm
+  t=   10.940 ns ( 54.7%)  wall 0h 02m 00s  ETA 0h 01m 40s  steps=  10194  dt=  0.859 ps [semi:ionization]  V=  5.89 kV  ne_max=9.80e+21  E_max= 151.2 kV/cm  head z= 0.00 mm
+  t=   11.466 ns ( 57.3%)  wall 0h 02m 31s  ETA 0h 01m 52s  steps=  10806  dt=  0.859 ps [semi:ionization]  V=  2.97 kV  ne_max=9.81e+21  E_max= 222.2 kV/cm  head z= 0.00 mm
+  t=   12.028 ns ( 60.1%)  wall 0h 03m 01s  ETA 0h 02m 00s  steps=  11460  dt=  0.859 ps [semi:ionization]  V=  0.86 kV  ne_max=9.75e+21  E_max= 185.3 kV/cm  head z= 0.00 mm
+  t=   12.564 ns ( 62.8%)  wall 0h 03m 31s  ETA 0h 02m 05s  steps=  12084  dt=  0.859 ps [semi:ionization]  V=  0.00 kV  ne_max=9.85e+21  E_max= 267.3 kV/cm  head z= 0.00 mm
+  t=   13.080 ns ( 65.4%)  wall 0h 04m 01s  ETA 0h 02m 08s  steps=  12684  dt=  0.859 ps [semi:ionization]  V= 16.38 kV  ne_max=9.93e+21  E_max= 285.9 kV/cm  head z= 0.00 mm
+  t=   13.596 ns ( 68.0%)  wall 0h 04m 31s  ETA 0h 02m 08s  steps=  13284  dt=  0.859 ps [semi:ionization]  V=  8.17 kV  ne_max=9.98e+21  E_max= 217.8 kV/cm  head z= 0.00 mm
+  t=   14.106 ns ( 70.5%)  wall 0h 05m 01s  ETA 0h 02m 06s  steps=  13878  dt=  0.859 ps [semi:ionization]  V=  7.61 kV  ne_max=9.98e+21  E_max= 259.0 kV/cm  head z= 0.00 mm
+  t=   14.606 ns ( 73.0%)  wall 0h 05m 31s  ETA 0h 02m 02s  steps=  14460  dt=  0.859 ps [semi:ionization]  V=  7.72 kV  ne_max=9.98e+21  E_max= 266.1 kV/cm  head z= 0.00 mm
+  t=   15.117 ns ( 75.6%)  wall 0h 06m 01s  ETA 0h 01m 57s  steps=  15054  dt=  0.859 ps [semi:ionization]  V=  7.84 kV  ne_max=9.98e+21  E_max= 431.8 kV/cm  head z= 0.00 mm
+  t=   15.622 ns ( 78.1%)  wall 0h 06m 32s  ETA 0h 01m 50s  steps=  15642  dt=  0.859 ps [semi:ionization]  V= 10.17 kV  ne_max=9.98e+21  E_max= 316.6 kV/cm  head z= 0.00 mm
+  t=   16.133 ns ( 80.7%)  wall 0h 07m 02s  ETA 0h 01m 41s  steps=  16236  dt=  0.859 ps [semi:ionization]  V= 16.36 kV  ne_max=9.98e+21  E_max= 378.2 kV/cm  head z= 0.00 mm
+  t=   16.633 ns ( 83.2%)  wall 0h 07m 32s  ETA 0h 01m 32s  steps=  16818  dt=  0.859 ps [semi:ionization]  V= 11.68 kV  ne_max=9.98e+21  E_max= 250.3 kV/cm  head z= 0.00 mm
+  t=   17.133 ns ( 85.7%)  wall 0h 08m 02s  ETA 0h 01m 21s  steps=  17400  dt=  0.859 ps [semi:ionization]  V=  9.94 kV  ne_max=9.98e+21  E_max= 289.8 kV/cm  head z= 0.00 mm
+  t=   17.639 ns ( 88.2%)  wall 0h 08m 32s  ETA 0h 01m 09s  steps=  17988  dt=  0.859 ps [semi:ionization]  V=  8.20 kV  ne_max=9.98e+21  E_max= 219.0 kV/cm  head z= 0.00 mm
+  t=   18.134 ns ( 90.7%)  wall 0h 09m 02s  ETA 0h 00m 56s  steps=  18564  dt=  0.859 ps [semi:ionization]  V=  5.43 kV  ne_max=9.98e+21  E_max= 215.0 kV/cm  head z= 0.00 mm
+  t=   18.639 ns ( 93.2%)  wall 0h 09m 33s  ETA 0h 00m 42s  steps=  19152  dt=  0.859 ps [semi:ionization]  V=  7.34 kV  ne_max=9.98e+21  E_max= 243.4 kV/cm  head z= 0.00 mm
+  t=   19.155 ns ( 95.8%)  wall 0h 10m 03s  ETA 0h 00m 27s  steps=  19752  dt=  0.859 ps [semi:ionization]  V=  6.78 kV  ne_max=9.98e+21  E_max= 339.7 kV/cm  head z= 0.00 mm
+  t=   19.665 ns ( 98.3%)  wall 0h 10m 33s  ETA 0h 00m 11s  steps=  20346  dt=  0.859 ps [semi:ionization]  V=  8.67 kV  ne_max=9.98e+21  E_max= 350.2 kV/cm  head z= 0.00 mm
+  t=   20.001 ns (100.0%)  wall 0h 10m 53s  ETA 0h 00m 00s  steps=  20736  dt=  0.859 ps [semi:ionization]  V= 13.94 kV  ne_max=9.98e+21  E_max= 409.7 kV/cm  head z= 0.00 mm
+  t=   20.001 ns (100.0%)  wall 0h 10m 53s  ETA 0h 00m 00s  steps=  20736  dt=  0.859 ps [semi:ionization]  V= 13.94 kV  ne_max=9.98e+21  E_max= 409.7 kV/cm  head z= 0.00 mm
+   ** gap bridged (streamer reached counter electrode) at t = 8.073 ns **
+/usr/local/lib/python3.11/dist-packages/numpy/lib/_function_base_impl.py:1318: RuntimeWarning: divide by zero encountered in divide
+  b = (dx2 - dx1) / (dx1 * dx2)
+/usr/local/lib/python3.11/dist-packages/numpy/lib/_function_base_impl.py:1319: RuntimeWarning: divide by zero encountered in divide
+  c = dx1 / (dx2 * (dx1 + dx2))
+/usr/local/lib/python3.11/dist-packages/numpy/lib/_function_base_impl.py:1328: RuntimeWarning: invalid value encountered in multiply
+  out[tuple(slice1)] = a * f[tuple(slice2)] + b * f[tuple(slice3)] \
+/usr/local/lib/python3.11/dist-packages/numpy/lib/_function_base_impl.py:1329: RuntimeWarning: invalid value encountered in multiply
+  + c * f[tuple(slice4)]
+/usr/local/lib/python3.11/dist-packages/numpy/lib/_function_base_impl.py:1345: RuntimeWarning: invalid value encountered in scalar divide
+  out[tuple(slice1)] = (f[tuple(slice2)] - f[tuple(slice3)]) / dx_n
+-- discharge-phase figures written in 4.8 s
+-- afterglow phase: 10 us (field frozen, radical diffusion + chemistry)
+   afterglow done: 1176 substeps, 0h 00m 03s, t=10.057 us
+-- CSV written in 0.3 s
+
+==== SUMMARY ====
+ simulated 10056.820 ns  |  substeps 20736  |  31.48 ms/substep  |  field solve 80% of step time
+ wall: init 0.07 s, discharge 0h 10m 53s, afterglow 0h 00m 03s, TOTAL 0h 11m 02s
+ dt [ps]: mean 0.923 min 0.139 max 113.884 ; limiter share dielectric 38%, ionization 0%, semi:ionization 62%
+ final: max ne 0.000e+00 m^-3, max |E| 409.7 kV/cm, head z nan mm, F_init 1.0
+ radicals (total number): O(P) 7.82e+17, O(D) 0.00e+00, N(S) 1.36e+16, N(D) 2.09e-118, OH 0.00e+00, NO 5.58e+16, O3 9.44e+17, H 0.00e+00

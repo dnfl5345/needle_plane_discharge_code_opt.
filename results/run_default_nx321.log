@@ -1,0 +1,27 @@
+== HV discharge simulator v18 batch ==  out: results/run_default_nx321
+   scipy: yes  poisson=direct dt_rule=v18
+   grid 321x249 (h=0.062 mm), unknowns=72422, init 0.39 s (LU factor 287 ms), poisson=direct
+-- discharge phase: 0 -> 300 ns  (V(t): IMPULSE, 0.01/0.1 us, Vp=+30 kV, config=NEEDLE_PLANE)
+  t=    0.000 ns (  0.0%)  wall 0h 00m 00s  ETA --  steps=      0  dt=  0.000 ps [-]  V=  0.00 kV  ne_max=0.00e+00  E_max=   0.0 kV/cm  head z=  nan mm
+  t=    1.049 ns (  0.3%)  wall 0h 00m 00s  ETA 0h 01m 09s  steps=      6  dt=104.577 ps [ionization]  V=  8.91 kV  ne_max=6.31e+11  E_max=  47.4 kV/cm  head z=  nan mm
+  t=    3.708 ns (  1.2%)  wall 0h 01m 00s  ETA 1h 20m 30s  steps=   1530  dt=  0.650 ps [dielectric]  V= 21.82 kV  ne_max=5.03e+20  E_max= 123.4 kV/cm  head z= 9.00 mm
+  t=    5.159 ns (  1.7%)  wall 0h 02m 01s  ETA 1h 54m 55s  steps=   3246  dt=  0.857 ps [dielectric]  V= 25.37 kV  ne_max=6.10e+20  E_max= 112.4 kV/cm  head z= 8.00 mm
+  t=    6.109 ns (  2.0%)  wall 0h 03m 01s  ETA 2h 24m 52s  steps=   4956  dt=  0.429 ps [dielectric]  V= 26.92 kV  ne_max=1.02e+21  E_max= 142.7 kV/cm  head z= 7.00 mm
+  t=    6.748 ns (  2.2%)  wall 0h 04m 01s  ETA 2h 54m 27s  steps=   6666  dt=  0.364 ps [dielectric]  V= 27.70 kV  ne_max=1.34e+21  E_max= 172.8 kV/cm  head z= 6.19 mm
+  t=    7.288 ns (  2.4%)  wall 0h 05m 01s  ETA 3h 21m 27s  steps=   8232  dt=  0.337 ps [dielectric]  V= 28.23 kV  ne_max=1.49e+21  E_max= 178.0 kV/cm  head z= 5.44 mm
+  t=    7.972 ns (  2.7%)  wall 0h 06m 01s  ETA 3h 40m 25s  steps=   9690  dt=  0.414 ps [dielectric]  V= 28.77 kV  ne_max=1.04e+21  E_max= 136.6 kV/cm  head z= 4.31 mm
+  t=    8.783 ns (  2.9%)  wall 0h 07m 01s  ETA 3h 52m 48s  steps=  11412  dt=  0.593 ps [dielectric]  V= 29.24 kV  ne_max=6.50e+20  E_max= 138.9 kV/cm  head z= 2.69 mm
+  t=    9.034 ns (  3.0%)  wall 0h 07m 15s  ETA 3h 53m 20s  steps=  11796  dt=  0.772 ps [dielectric]  V= 29.35 kV  ne_max=5.66e+20  E_max= 150.4 kV/cm  head z= 0.00 mm
+   ** gap bridged (streamer reached counter electrode) at t = 9.034 ns **
+   discharge phase stopped 0 ns after bridging (fluid-model validity ends: streamer-to-spark transition; use --R_series > 0 or --on_bridge continue to go on)
+-- discharge-phase figures written in 4.7 s
+-- afterglow phase: 10 us (field frozen, radical diffusion + chemistry)
+   afterglow done: 16 substeps, 0h 00m 00s, t=14.716 us
+-- CSV written in 1.0 s
+
+==== SUMMARY ====
+ simulated 14716.476 ns  |  substeps 11796  |  36.85 ms/substep  |  field solve 35% of step time
+ wall: init 0.39 s, discharge 0h 07m 15s, afterglow 0h 00m 00s, TOTAL 0h 07m 21s
+ dt [ps]: mean 0.717 min 0.229 max 104.577 ; limiter share dielectric 98%, ionization 1%, semi:ionization 1%
+ final: max ne 0.000e+00 m^-3, max |E| 150.4 kV/cm, head z nan mm, F_init 1.0
+ radicals (total number): O(P) 3.87e+12, O(D) 0.00e+00, N(S) 3.68e+12, N(D) 0.00e+00, OH 0.00e+00, NO 3.64e+12, O3 7.74e+12, H 0.00e+00

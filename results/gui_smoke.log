@@ -1,0 +1,6 @@
+[gui] created; grid 161x125, poisson=direct
+[gui] 8 tabs, axes per fig: [2, 2, 2, 4, 3, 1, 6, 2]
+[gui] step_once OK: t=1.364 ns
+[gui] run 154.6 s: t=38382924.855 ns, substeps=7236, frames=4417, speed=248211.9207 ns/s, last redraw 2.17 s, bridged=True (t_bridge=8.099), afterglow=True, msg='Gap bridged at 8.10 ns (streamer reached counter electrode) -> auto afterglow (field frozen)'
+[gui] afterglow step OK: t=38394924.855 ns dt=2000.000 ns
+[gui] export_csv OK: 20 files in /tmp/tmpvtawqcf1

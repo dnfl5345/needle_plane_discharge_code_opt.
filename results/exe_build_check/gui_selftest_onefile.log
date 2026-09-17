@@ -1,0 +1,12 @@
+HV Discharge Simulator v18.0
+  python      : 3.12.3
+  frozen exe  : yes (HVDischargeSim)
+  app folder  : /home/user/needle_plane_discharge_code_opt./dist
+  numpy       : 2.5.3
+  scipy       : 1.18.1
+  matplotlib  : 3.11.2
+  tkinter     : Tk 8.6
+  window      : 1460x950, tabs 8, grid 161x125, solver direct
+  run 20.0 s : t = 5.083 ns, 1818 substeps, 303 frames, redraw 1.51 s, bridged = False
+  figures     : /home/user/needle_plane_discharge_code_opt./dist/gui_selftest (8 PNG)
+GUI SELFTEST OK

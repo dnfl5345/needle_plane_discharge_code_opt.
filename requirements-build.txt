@@ -1,0 +1,4 @@
+# 실행 파일(.exe) 빌드 전용 추가 의존성
+#   pip install -r requirements.txt -r requirements-build.txt
+#   python build_exe.py
+pyinstaller>=6.0

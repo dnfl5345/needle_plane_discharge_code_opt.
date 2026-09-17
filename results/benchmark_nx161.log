@@ -1,0 +1,11 @@
+v17 init 5.2 s, grid 161x125
+[v17 original          ] t=3.009 ns  substeps=   168  wall=   12.4 s   73.62 ms/substep  ne_max=1.331e+20  E_max=96.2 kV/cm
+v18 init 0.06 s (poisson=direct)
+[v18 (dt rule v17)     ] t=3.028 ns  substeps=   102  wall=    0.6 s    5.80 ms/substep  ne_max=3.032e+19  E_max=75.5 kV/cm
+[v18 (dt rule v18)     ] t=3.028 ns  substeps=   102  wall=    0.6 s    6.09 ms/substep  ne_max=3.032e+19  E_max=75.5 kV/cm
+
+==== summary ====
+v17       wall    12.4 s |    168 substeps |  73.62 ms/substep | speedup x  1.0 | ne_max 1.331e+20 | E_max   96.2 | max|dlog10 ne|axis 0.000 | max rel dE axis 0.00e+00
+v18_dt17  wall     0.6 s |    102 substeps |   5.80 ms/substep | speedup x 20.9 | ne_max 3.032e+19 | E_max   75.5 | max|dlog10 ne|axis 3.245 | max rel dE axis 4.36e-01
+v18       wall     0.6 s |    102 substeps |   6.09 ms/substep | speedup x 19.9 | ne_max 3.032e+19 | E_max   75.5 | max|dlog10 ne|axis 3.245 | max rel dE axis 4.36e-01
+saved results/benchmark_nx161.png/.json

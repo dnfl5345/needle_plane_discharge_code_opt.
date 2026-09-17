@@ -1,0 +1,12 @@
+[explicit] t=  7.380 ns steps=6000 semi=0 fact=0 dt=0.331 ps [dielectric] Va=28.22 kV I=0.09 A ne=1.77e+21 wall=38s
+[explicit] t=  8.376 ns steps=12000 semi=0 fact=0 dt=0.063 ps [dielectric] Va=24.64 kV I=4.38 A ne=9.74e+21 wall=77s
+[explicit] t=  8.764 ns steps=18000 semi=0 fact=0 dt=0.065 ps [dielectric] Va=22.89 kV I=6.34 A ne=9.77e+21 wall=115s
+[explicit] t=  9.154 ns steps=24000 semi=0 fact=0 dt=0.062 ps [dielectric] Va=11.88 kV I=17.52 A ne=9.75e+21 wall=154s
+[explicit] t=  9.423 ns steps=30000 semi=0 fact=0 dt=0.036 ps [dielectric] Va=8.07 kV I=21.44 A ne=9.99e+21 wall=192s
+[explicit] t=  9.679 ns steps=36000 semi=0 fact=0 dt=0.038 ps [dielectric] Va=1.47 kV I=28.12 A ne=1.00e+22 wall=230s
+[explicit] t=  9.967 ns steps=42000 semi=0 fact=0 dt=0.049 ps [dielectric] Va=0.67 kV I=29.01 A ne=9.99e+21 wall=269s
+[explicit] t= 10.226 ns steps=48000 semi=0 fact=0 dt=0.047 ps [dielectric] Va=1.04 kV I=28.70 A ne=1.00e+22 wall=307s
+[explicit] t= 10.484 ns steps=54000 semi=0 fact=0 dt=0.043 ps [dielectric] Va=0.21 kV I=29.60 A ne=1.00e+22 wall=346s
+[explicit] t= 10.734 ns steps=60000 semi=0 fact=0 dt=0.042 ps [dielectric] Va=0.13 kV I=29.72 A ne=1.00e+22 wall=385s
+[explicit] t= 10.996 ns steps=66000 semi=0 fact=0 dt=0.042 ps [dielectric] Va=2.41 kV I=27.48 A ne=1.00e+22 wall=424s
+[explicit] DONE t=11.000 ns wall=424s steps=66084 semi=0 refactor=0 t_bridge=8.064674116648478 ne_max=9.999e+21 Va=2295.2 I=27.597

@@ -1,0 +1,5 @@
+[ok] HVDischargeSim --version
+[ok] HVDischargeSim --selftest
+[ok] HVDischargeSim --batch (figures: 7)
+[ok] HVDischargeSim --help
+ALL ENTRYPOINT TESTS PASSED

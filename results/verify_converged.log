@@ -1,0 +1,13 @@
+t= 1.595 ns dt17=  45.86 dt18=  45.86 ps | ne_max: v17conv 4.864e+11 v18 4.864e+11 v17(60it) 3.500e+11 | Emax:  51.87  51.87  50.88 kV/cm | max|V17conv-V18|=1.19e-01 V  [33s]
+t= 1.923 ns dt17=  26.15 dt18=  26.15 ps | ne_max: v17conv 5.378e+11 v18 5.378e+11 v17(60it) 4.551e+11 | Emax:  59.68  59.68  56.10 kV/cm | max|V17conv-V18|=7.46e-02 V  [66s]
+t= 2.143 ns dt17=  19.38 dt18=  19.38 ps | ne_max: v17conv 5.625e+11 v18 5.625e+11 v17(60it) 5.115e+11 | Emax:  64.48  64.48  60.52 kV/cm | max|V17conv-V18|=5.68e-02 V  [100s]
+t= 2.316 ns dt17=  15.80 dt18=  15.79 ps | ne_max: v17conv 1.457e+12 v18 1.456e+12 v17(60it) 1.640e+12 | Emax:  68.02  68.02  64.22 kV/cm | max|V17conv-V18|=4.63e-02 V  [134s]
+t= 2.460 ns dt17=  13.53 dt18=  13.53 ps | ne_max: v17conv 2.085e+13 v18 2.085e+13 v17(60it) 2.210e+13 | Emax:  70.85  70.85  67.32 kV/cm | max|V17conv-V18|=3.92e-02 V  [167s]
+t= 2.587 ns dt17=  11.95 dt18=  11.95 ps | ne_max: v17conv 3.093e+14 v18 3.093e+14 v17(60it) 3.125e+14 | Emax:  73.21  73.21  69.96 kV/cm | max|V17conv-V18|=3.41e-02 V  [202s]
+t= 2.701 ns dt17=  11.07 dt18=  11.07 ps | ne_max: v17conv 4.693e+15 v18 4.693e+15 v17(60it) 4.579e+15 | Emax:  75.26  75.26  72.25 kV/cm | max|V17conv-V18|=3.10e-02 V  [236s]
+t= 2.808 ns dt17=  10.42 dt18=  10.42 ps | ne_max: v17conv 7.214e+16 v18 7.214e+16 v17(60it) 6.891e+16 | Emax:  77.11  77.11  74.25 kV/cm | max|V17conv-V18|=2.85e-02 V  [269s]
+t= 2.909 ns dt17=   9.90 dt18=   9.90 ps | ne_max: v17conv 1.121e+18 v18 1.121e+18 v17(60it) 1.052e+18 | Emax:  78.62  78.62  75.94 kV/cm | max|V17conv-V18|=2.64e-02 V  [302s]
+t= 3.008 ns dt17=  10.07 dt18=  10.07 ps | ne_max: v17conv 1.752e+19 v18 1.751e+19 v17(60it) 1.619e+19 | Emax:  77.43  77.43  75.02 kV/cm | max|V17conv-V18|=2.40e-02 V  [336s]
+
+final t=3.008 ns: ne_max v17(converged SOR)=1.7515e+19  v18=1.7515e+19  ratio=1.0000 | v17(60 it)=1.6194e+19 ratio=0.925
+Emax v17conv=77.43 v18=77.43 v17(60it)=75.02 kV/cm ; max|V17conv - V18| over run = 4.170e-01 V
