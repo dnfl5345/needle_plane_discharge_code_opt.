@@ -1,0 +1,8 @@
+
+BUILD OK (45 s)
+  /home/user/needle_plane_discharge_code_opt./dist/HVDischargeSim
+  size: 78 MB
+
+자체점검:  "/home/user/needle_plane_discharge_code_opt./dist/HVDischargeSim" --selftest
+GUI 실행 :  "/home/user/needle_plane_discharge_code_opt./dist/HVDischargeSim"
+배치 실행:  "/home/user/needle_plane_discharge_code_opt./dist/HVDischargeSim" --batch --afterglow_us 10

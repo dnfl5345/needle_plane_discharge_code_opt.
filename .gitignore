@@ -11,3 +11,11 @@ results/run_default_nx321_postbridge1ns.log
 results/run_R1000_crashed_plot/csv/
 results/smoke_patch/
 results/run_R1000_300ns*
+
+# 실행 파일 빌드 산출물 (PyInstaller)
+build/
+dist/
+*.spec
+gui_selftest/
+selftest_field.png
+error_log.txt

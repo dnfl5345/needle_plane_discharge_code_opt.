@@ -6,22 +6,91 @@ v17(`needle_plane_discharge_hmi_20060915_2.py`, 원본은 `legacy/`에 보존)�
 
 | 파일 | 역할 |
 |---|---|
-| `discharge_core.py` | v18 물리 코어 (GUI 없이 import 가능). v17 모델 + 속도 개선 |
+| **`main.py`** | **통합 실행 진입점** (실행 파일이 호출하는 파일). GUI / 배치 / 자체점검 |
 | `needle_plane_discharge_hmi.py` | v18 GUI (v17 HMI 8개 탭 그대로, 코어만 교체 + 재렌더링 분리) |
+| `discharge_core.py` | v18 물리 코어 (GUI 없이 import 가능). v17 모델 + 속도 개선 |
 | `run_batch.py` | 헤드리스 배치 실행기: 그림 7종 + CSV + 소요시간 보고서 자동 생성 |
 | `discharge_export.py` | CSV 저장 (GUI/배치 공용, v17 형식 동일) |
+| **`build_exe.py`, `build_exe.bat`, `build_exe.sh`** | **GUI 포함 단독 실행 파일(.exe) 빌드** |
 | `benchmark.py` | v17 원본 코어 vs v18 속도·결과 비교 |
-| `tests/test_core.py`, `tests/test_gui_smoke.py` | 회귀 테스트 (헤드리스 / Xvfb GUI) |
+| `tests/test_core.py`, `tests/test_gui_smoke.py`, `tests/test_entrypoint.py` | 회귀 테스트 (코어 / Xvfb GUI / 진입점·실행 파일) |
 | `legacy/` | v17 원본 파일과, 그 물리 코어를 원문 그대로 잘라낸 `core_v17.py` (기준값용) |
 | `results/` | 이 문서의 모든 그림·로그·`timing.json` |
 
+---
+
+## 0. 실행 방법
+
+### 0.1 파이썬으로 실행 (개발·연구용)
+
 ```bash
-pip install numpy scipy matplotlib
-python needle_plane_discharge_hmi.py            # GUI (v17 과 같은 사용법)
-python run_batch.py --afterglow_us 10           # 기본 시나리오 헤드리스 실행 -> results/run_.../
-python run_batch.py --R_series 1000 --t_end_ns 300 --afterglow_us 10   # 직렬저항 회로로 임펄스 전 구간
+pip install -r requirements.txt                 # numpy, scipy, matplotlib
+python main.py                                  # GUI 실행 (권장 진입점)
+python main.py --batch --afterglow_us 10        # 헤드리스 배치 -> results/run_.../
+python main.py --selftest                       # 의존성·코어 자체점검
+python needle_plane_discharge_hmi.py            # GUI 직접 실행 (v17 과 같은 사용법)
+python run_batch.py --R_series 1000 --t_end_ns 300 --afterglow_us 10   # 직렬저항 회로
 python tests/test_core.py                       # 회귀 테스트 (약 1 분)
 ```
+
+`main.py` 는 GUI(`needle_plane_discharge_hmi.py`)와 배치(`run_batch.py`)를 하나의 진입점으로 묶은 것으로,
+실행 파일이 호출하는 파일도 이것입니다. `tkinter` 는 파이썬 표준 라이브러리이지만 Linux 에서는 별도
+패키지입니다(`sudo apt install python3-tk`). Windows 공식 설치본에는 기본 포함됩니다.
+
+### 0.2 GUI 가 포함된 단독 실행 파일 만들기
+
+파이썬·numpy·scipy·matplotlib·tkinter 를 모두 포함하므로, **배포 대상 PC 에 파이썬을 설치하지 않아도**
+더블클릭으로 실행됩니다.
+
+```bat
+:: Windows  (build_exe.bat 을 더블클릭해도 됩니다)
+build_exe.bat                 :: 폴더형 (권장)
+build_exe.bat --onefile       :: 단일 HVDischargeSim.exe
+```
+```bash
+# Linux / macOS
+./build_exe.sh                # 폴더형
+./build_exe.sh --onefile      # 단일 실행 파일
+# tkinter 가 있는 다른 파이썬을 쓰려면:  PYTHON=/usr/bin/python3.12 ./build_exe.sh
+```
+
+| 형태 | 결과물 | 배포 크기 | 시작 시간 | 언제 |
+|---|---|---|---|---|
+| 폴더형 (기본) | `dist/HVDischargeSim/` 폴더 전체 | 272 MB | 1.3 s | 사내 공유·USB 등 폴더째 전달 |
+| 단일 파일 | `dist/HVDischargeSim(.exe)` 파일 하나 | 78 MB | 2.3 s (Windows 는 10~30 s) | 메일·메신저로 파일 하나만 전달 |
+
+빌드된 실행 파일의 사용법 (GUI 는 인자 없이 실행):
+
+```bat
+HVDischargeSim.exe                                  :: GUI 실행
+HVDischargeSim.exe --batch --afterglow_us 10        :: 헤드리스 배치 (exe 옆 results/ 에 저장)
+HVDischargeSim.exe --selftest                       :: 의존성·코어 자체점검
+HVDischargeSim.exe --gui-selftest 20                :: GUI 를 20 초 돌려 8개 탭 그림 저장
+HVDischargeSim.exe --version                        :: 버전·의존성 확인
+```
+
+**이 저장소에서 실제로 빌드·검증한 결과** (Linux, Python 3.12, PyInstaller 6.22.3):
+
+| 점검 | 폴더형 | 단일 파일 |
+|---|---|---|
+| 빌드 시간 / 크기 | 25 s / 272 MB | 31 s / 78 MB |
+| `--selftest` (scipy 직접해법 활성, 코어 30 서브스텝, 그림 저장) | OK (1.3 s) | OK (2.3 s) |
+| `--gui-selftest` (창 1460×950, 8개 탭, 15~19 s 계산) | OK (1,788 서브스텝) | OK (1,374 서브스텝) |
+| `--batch --t_end_ns 5` (그림 7종 + timing.json) | OK (16 s) | OK |
+| `tests/test_entrypoint.py <실행파일>` | PASS | PASS |
+
+검증 로그와 실행 파일 GUI 가 실제로 그린 8개 탭 그림은 `results/exe_build_check/` 에 있습니다.
+
+![exe GUI tab7](results/exe_build_check/tab7_streak.png)
+
+주의사항
+* 실행 파일은 **빌드한 OS 용으로만** 동작합니다. Windows 용 `.exe` 는 Windows 에서 빌드하십시오
+  (이 저장소의 검증은 Linux 바이너리로 수행했고, 빌드 스크립트는 OS 공통입니다).
+* 서명하지 않은 실행 파일이라 Windows SmartScreen 이 "알 수 없는 게시자" 경고를 낼 수 있습니다
+  ("추가 정보 → 실행"). 백신이 PyInstaller 산출물을 오탐할 수 있으니 사내 배포 시 예외 등록이 필요할 수 있습니다.
+* GUI 실행 파일은 콘솔 창이 없으므로, 오류가 나면 실행 파일 옆에 `error_log.txt` 가 저장됩니다.
+  원인을 바로 보려면 `python build_exe.py --console` 로 콘솔 포함 빌드를 하십시오.
+* `build/`, `dist/`, `*.spec` 은 빌드 산출물이라 저장소에 포함하지 않습니다(`.gitignore`).
 
 ---
 
